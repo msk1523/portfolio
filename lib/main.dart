@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class PortfolioPage extends StatelessWidget {
-  final String backgroundImageUrl = 'lib/assets/asset1.jpg';
+  final String backgroundImage = 'assets/asset1.jpg';
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,8 @@ class PortfolioPage extends StatelessWidget {
         children: [
           // Parallax Background
           Positioned.fill(
-            child: Image.network(
-              backgroundImageUrl,
+            child: Image.asset(
+              backgroundImage,
               fit: BoxFit.cover,
             ),
           ),
@@ -59,7 +59,7 @@ class PortfolioPage extends StatelessWidget {
         children: [
           const CircleAvatar(
             radius: 50,
-            backgroundImage: NetworkImage('lib/assets/asset2.jpg'),
+            backgroundImage: AssetImage('assets/asset2.jpg'),
           ),
           const SizedBox(height: 12),
           const Text(
@@ -71,7 +71,7 @@ class PortfolioPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Flutter Developer | Blockchain Enthusiast',
+            'Flutter Developer | Mobile Developer Enthusiast',
             style: TextStyle(
               fontSize: 18,
               color: Colors.black.withOpacity(1),
@@ -110,6 +110,7 @@ class PortfolioPage extends StatelessWidget {
       elevation: 4,
       margin: const EdgeInsets.only(bottom: 16),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      color: Colors.white54.withOpacity(0.65),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
